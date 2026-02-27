@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Separator } from "../components/ui/separator";
+---
+
+<BaseLayout title="Contact me – Christopher Klint, CTO & Engineering Leader" description="Contact Christopher Klint, CTO & fractional CTO in Stockholm, for strategic tech leadership, consulting, keynote speaking, or SaaS & cloud architecture expertise.">
+  <section class="mx-auto max-w-3xl px-6 py-12">
+    <h1 class="font-heading text-3xl font-bold tracking-tight sm:text-4xl">Contact</h1>
+    <p class="mt-4 max-w-xl text-muted-foreground leading-relaxed">
+      Looking for an experienced CTO or fractional CTO to lead your organization's technology growth? Interested in booking me for your next tech event, keynote speech, webinar, or podcast?
+    </p>
+
+    <Separator className="my-8" />
+
+    <div class="space-y-8">
+      <div>
+        <h2 class="font-heading text-xl font-semibold">How I can help your business</h2>
+        <ul class="mt-4 space-y-3 text-muted-foreground">
+          <li><strong class="text-foreground">CTO & fractional CTO services:</strong> Strategic technology leadership tailored to your organization's unique needs.</li>
+          <li><strong class="text-foreground">Tech speaking & thought leadership:</strong> Engaging presentations on innovation, leadership, engineering culture, and technology trends.</li>
+          <li><strong class="text-foreground">Technology consulting:</strong> Expertise in scalable SaaS architectures, cloud-native solutions (Azure, AWS, Google Cloud), and full-stack technologies (Typescript, React, Golang, Node.js, GraphQL, Microservices).</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-xl font-semibold">Reach me directly</h2>
+        <ul class="mt-4 space-y-3 text-muted-foreground">
+          <li>
+            <a href="mailto:christopher.klint@gmail.com" class="text-primary transition-colors hover:underline">
+              christopher.klint@gmail.com
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/christopherklint" target="_blank" rel="noopener noreferrer" class="text-primary transition-colors hover:underline">
+              Connect with me on LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-xl font-semibold">Schedule a call</h2>
+        <p class="mt-2 text-muted-foreground">
+          Ready to discuss your tech strategy or book a speaking engagement?
+        </p>
+        <a
+          href="https://cal.com/christopherklint/30-min"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-4 inline-flex h-10 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+        >
+          Schedule your call today
+        </a>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-xl font-semibold">Why work with me?</h2>
+        <ul class="mt-4 space-y-2 text-muted-foreground">
+          <li>Proven track record in technology-driven business growth.</li>
+          <li>Extensive experience scaling global teams and optimizing cloud infrastructure costs.</li>
+          <li>Recognized thought leader, featured at Women in Tech Sweden and various tech podcasts.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

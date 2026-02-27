@@ -1,0 +1,29 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t">
+  <div class="mx-auto flex max-w-3xl flex-col items-center gap-4 px-6 py-8 text-sm text-muted-foreground sm:flex-row sm:justify-between">
+    <p>&copy; {currentYear} Christopher Klint. All rights reserved.</p>
+    <div class="flex items-center gap-4">
+      <a
+        href="https://linkedin.com/in/christopherklint"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="transition-colors hover:text-foreground"
+        aria-label="LinkedIn"
+      >
+        LinkedIn
+      </a>
+      <a
+        href="https://github.com/christopherklint97"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="transition-colors hover:text-foreground"
+        aria-label="GitHub"
+      >
+        GitHub
+      </a>
+    </div>
+  </div>
+</footer>
