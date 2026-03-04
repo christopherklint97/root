@@ -2,51 +2,64 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Christopher Klint | CTO & Engineering Leader" description="Christopher Klint is a Stockholm-based CTO available for fractional or full-time roles, specializing in SaaS, cloud-native tech, and scaling engineering teams.">
+<BaseLayout title="Christopher Klint | Engineering Leader & Tech Speaker" description="Christopher Klint is a Stockholm-based engineering leader and tech speaker, specializing in scalable platforms, cloud-native architecture, and building high-performance engineering teams.">
   <section class="mx-auto max-w-3xl px-6 py-16 sm:py-24">
     <div class="space-y-6">
       <h1 class="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
         Christopher Klint
       </h1>
       <p class="text-xl text-muted-foreground">
-        CTO & Engineering Leader
+        Engineering Leader & Tech Speaker
       </p>
       <p class="max-w-xl text-base leading-relaxed text-muted-foreground">
-        Strategic engineering leader and experienced CTO based in Stockholm, Sweden. Proven expertise in driving transformative technology projects, scaling global engineering teams, and creating sustainable customer value through technology-driven growth.
+        Strategic engineering leader based in Stockholm, Sweden. I specialize in building scalable platforms, driving product strategy, and growing high-performance engineering teams. Currently a Staff Engineer at <a href="https://telnesstech.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Telness Tech</a>, working on cloud-based telecom infrastructure that powers mobile operators worldwide.
       </p>
 
       <div class="space-y-4 pt-4">
-        <h2 class="font-heading text-xl font-semibold">Why I'm the right CTO for your company</h2>
+        <h2 class="font-heading text-xl font-semibold">What I do</h2>
         <ul class="space-y-2 text-muted-foreground">
-          <li><strong class="text-foreground">Proven leadership:</strong> Scaled teams from 10 to 50+ engineers while consistently delivering 100%+ year-over-year growth.</li>
-          <li><strong class="text-foreground">Technical expertise:</strong> Specialized in scalable B2B SaaS products, cloud-native platforms (Azure, AWS, Google Cloud), and full-stack architecture (Typescript, React, Golang, Node.js, GraphQL, Microservices).</li>
-          <li><strong class="text-foreground">Innovative strategist:</strong> Developed strategic technology roadmaps aligned with executive vision, enabling new revenue streams and accelerating product launches by up to 75%.</li>
-          <li><strong class="text-foreground">Cost efficiency:</strong> Successfully reduced cloud infrastructure costs by 50% through strategic optimizations and efficient CI/CD workflows.</li>
+          <li><strong class="text-foreground">Platform engineering:</strong> Designing APIs and architecting end-to-end product capabilities, increasing integration speed with network operators by 80%.</li>
+          <li><strong class="text-foreground">Team building:</strong> Scaled engineering teams from 10 to 50+, with a track record of mentoring developers and reducing onboarding time to under 20 days. Awarded Role Model of the Year two consecutive years.</li>
+          <li><strong class="text-foreground">Product strategy:</strong> Developed technology roadmaps aligned with executive vision, enabling new revenue streams and accelerating product launches by 75%.</li>
+          <li><strong class="text-foreground">Cloud optimization:</strong> Reduced cloud infrastructure costs by 50% through strategic right-sizing, logging optimizations, and efficient CI/CD workflows.</li>
         </ul>
       </div>
 
       <div class="space-y-4 pt-4">
-        <h2 class="font-heading text-xl font-semibold">Public speaking & thought leadership</h2>
+        <h2 class="font-heading text-xl font-semibold">Speaking & podcasts</h2>
         <p class="text-muted-foreground">
-          As an active industry speaker and thought leader, I've shared insights on building thriving tech organizations at events like <strong class="text-foreground">Women in Tech Sweden</strong> and podcasts such as <strong class="text-foreground">EqualIT</strong> and <strong class="text-foreground">Evolution Recruitment</strong>. I'm always open to new speaking opportunities to discuss leadership, innovation, technology trends, and building scalable engineering cultures.
+          I regularly speak about engineering leadership, building inclusive teams, and effective collaboration. Recent appearances include:
+        </p>
+        <ul class="space-y-2 text-muted-foreground">
+          <li><strong class="text-foreground">Women in Tech Sweden</strong> &mdash; Panel on feedback culture and delivering it effectively (Regatta 2023)</li>
+          <li><strong class="text-foreground">EqualIT Podcast</strong> &mdash; Building high-performing inclusive teams through trust and vulnerability</li>
+          <li><strong class="text-foreground">The Live Series (Amicus)</strong> &mdash; Effective collaboration in tech teams, alongside engineers from Banked, Develop Diverse, and Miro</li>
+          <li><strong class="text-foreground">Evolution Recruitment</strong> &mdash; Leadership and building scalable engineering cultures</li>
+        </ul>
+        <p class="text-sm text-muted-foreground">
+          Open to speaking at events, conferences, and podcasts. <a href="/contact" class="text-primary hover:underline">Get in touch</a>.
         </p>
       </div>
 
       <div class="space-y-4 pt-4">
-        <h2 class="font-heading text-xl font-semibold">Areas of expertise</h2>
-        <ul class="space-y-2 text-muted-foreground">
-          <li>Executive leadership & strategic vision</li>
-          <li>SaaS product development & cloud architecture</li>
-          <li>Building & scaling global tech teams</li>
-          <li>Strategic partnerships & vendor negotiations</li>
-          <li>Agile methodologies & rapid product delivery</li>
-        </ul>
+        <h2 class="font-heading text-xl font-semibold">Technical expertise</h2>
+        <div class="flex flex-wrap gap-2">
+          {["TypeScript", "Go", "React", "Next.js", "Node.js", "GraphQL", "REST APIs", "AWS", "Azure", "Google Cloud", "Microservices", "CI/CD", "PostgreSQL", "Docker"].map((skill) => (
+            <span class="rounded-full border px-3 py-1 text-sm text-muted-foreground">{skill}</span>
+          ))}
+        </div>
       </div>
 
-      <div class="flex gap-4 pt-6">
+      <div class="flex flex-wrap gap-4 pt-6">
+        <a
+          href="/about"
+          class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+        >
+          About Me
+        </a>
         <a
           href="/blog"
-          class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+          class="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
         >
           Read the Blog
         </a>
