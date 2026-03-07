@@ -1,61 +1,68 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { Separator } from "../components/ui/separator";
 ---
 
-<BaseLayout title="Contact – Christopher Klint" description="Reach out to Christopher Klint for speaking engagements, tech consulting, or collaboration opportunities.">
+<BaseLayout title="Contact | Christopher Klint" description="Reach out to Christopher Klint for speaking engagements, tech consulting, or collaboration opportunities.">
   <section class="mx-auto max-w-3xl px-6 py-12">
-    <h1 class="font-heading text-3xl font-bold tracking-tight sm:text-4xl">Contact</h1>
-    <p class="mt-4 max-w-xl text-muted-foreground leading-relaxed">
-      Whether you're looking for a speaker for your next event, want to discuss engineering leadership, or have a collaboration idea &mdash; I'd love to hear from you.
-    </p>
+    <div class="animate-slide-up stagger-1">
+      <h1 class="font-heading text-3xl tracking-tight sm:text-4xl">Contact</h1>
+      <p class="mt-4 max-w-xl text-muted-foreground leading-relaxed">
+        Whether you're looking for a speaker, want to discuss engineering leadership, or have a collaboration idea &mdash; I'd love to hear from you.
+      </p>
+    </div>
 
-    <Separator className="my-8" />
+    <div class="mt-12 h-px bg-border/60 animate-grow stagger-2"></div>
 
-    <div class="space-y-8">
-      <div>
-        <h2 class="font-heading text-xl font-semibold">What I'm open to</h2>
-        <ul class="mt-4 space-y-3 text-muted-foreground">
-          <li><strong class="text-foreground">Speaking & podcasts:</strong> Conference talks, panels, and podcast guest appearances on engineering leadership, team building, feedback culture, and scaling tech organizations.</li>
-          <li><strong class="text-foreground">Technology consulting:</strong> Strategic advice on cloud architecture (AWS, Azure, GCP), platform engineering, API design, and scaling engineering teams.</li>
-          <li><strong class="text-foreground">Mentorship & advising:</strong> Happy to connect with engineering managers, aspiring leaders, and career changers navigating the tech industry.</li>
-        </ul>
+    <div class="mt-12 space-y-12">
+      <div class="animate-slide-up stagger-3">
+        <h2 class="font-heading text-2xl">What I'm open to</h2>
+        <div class="mt-6 space-y-4">
+          {[
+            { label: "Speaking & podcasts", text: "Conference talks, panels, and podcast guest appearances on engineering leadership, team building, and scaling tech organizations." },
+            { label: "Technology consulting", text: "Strategic advice on cloud architecture, platform engineering, API design, and scaling engineering teams." },
+            { label: "Mentorship & advising", text: "Happy to connect with engineering managers, aspiring leaders, and career changers navigating the tech industry." },
+          ].map((item) => (
+            <div class="rounded-lg border border-border/60 p-5">
+              <h3 class="font-semibold text-foreground">{item.label}</h3>
+              <p class="mt-1 text-sm text-muted-foreground leading-relaxed">{item.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-semibold">Reach me directly</h2>
-        <ul class="mt-4 space-y-3 text-muted-foreground">
-          <li>
-            <strong class="text-foreground">Email:</strong>{" "}
-            <a href="mailto:christopher.klint@gmail.com" class="text-primary transition-colors hover:underline">
-              christopher.klint@gmail.com
-            </a>
-          </li>
-          <li>
-            <strong class="text-foreground">LinkedIn:</strong>{" "}
-            <a href="https://www.linkedin.com/in/christopherklint" target="_blank" rel="noopener noreferrer" class="text-primary transition-colors hover:underline">
-              linkedin.com/in/christopherklint
-            </a>
-          </li>
-          <li>
-            <strong class="text-foreground">GitHub:</strong>{" "}
-            <a href="https://github.com/christopherklint97" target="_blank" rel="noopener noreferrer" class="text-primary transition-colors hover:underline">
-              github.com/christopherklint97
-            </a>
-          </li>
-        </ul>
+      <div class="animate-slide-up stagger-4">
+        <h2 class="font-heading text-2xl">Reach me</h2>
+        <div class="mt-6 space-y-3">
+          {[
+            { label: "Email", href: "mailto:christopher.klint@gmail.com", text: "christopher.klint@gmail.com" },
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/christopherklint", text: "linkedin.com/in/christopherklint", external: true },
+            { label: "GitHub", href: "https://github.com/christopherklint97", text: "github.com/christopherklint97", external: true },
+          ].map((link) => (
+            <div class="flex items-baseline gap-4">
+              <span class="w-16 shrink-0 text-sm text-muted-foreground font-mono">{link.label}</span>
+              <a
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+                class="text-foreground underline decoration-primary/40 underline-offset-4 transition-colors hover:decoration-primary"
+              >
+                {link.text}
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div>
-        <h2 class="font-heading text-xl font-semibold">Schedule a call</h2>
-        <p class="mt-2 text-muted-foreground">
-          Want to chat about a speaking opportunity, collaboration, or just connect? Book a time that works for you.
+      <div class="animate-slide-up stagger-5">
+        <h2 class="font-heading text-2xl">Schedule a call</h2>
+        <p class="mt-3 text-muted-foreground">
+          Want to chat about a speaking opportunity, collaboration, or just connect?
         </p>
         <a
           href="https://cal.com/christopherklint/30-min"
           target="_blank"
           rel="noopener noreferrer"
-          class="mt-4 inline-flex h-10 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+          class="mt-5 inline-flex h-11 items-center justify-center rounded-md bg-primary px-7 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
         >
           Book a 30-minute call
         </a>

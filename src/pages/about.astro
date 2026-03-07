@@ -1,145 +1,149 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { Separator } from "../components/ui/separator";
 ---
 
-<BaseLayout title="About – Christopher Klint" description="Engineering leader with experience across telecom, digital signage, and e-commerce. From fullstack developer to Director of Technology, now Staff Engineer at Telness Tech.">
+<BaseLayout title="About | Christopher Klint" description="Engineering leader with experience across telecom, digital signage, and e-commerce. From fullstack developer to Director of Technology, now Staff Engineer at Telness Tech.">
   <section class="mx-auto max-w-3xl px-6 py-12">
-    <h1 class="font-heading text-3xl font-bold tracking-tight sm:text-4xl">About</h1>
-    <p class="mt-4 max-w-xl text-muted-foreground leading-relaxed">
-      I'm an engineering leader who loves building products and growing teams. My career has taken me from coding bootcamp graduate to directing technology strategy, and I bring that full-stack perspective to everything I do.
-    </p>
+    <div class="animate-slide-up stagger-1">
+      <h1 class="font-heading text-3xl tracking-tight sm:text-4xl">About</h1>
+      <p class="mt-4 max-w-xl text-muted-foreground leading-relaxed">
+        I'm an engineering leader who loves building products and growing teams. My career has taken me from coding bootcamp graduate to directing technology strategy, and I bring that full-stack perspective to everything I do.
+      </p>
+    </div>
 
-    <Separator className="my-8" />
+    <div class="mt-12 h-px bg-border/60 animate-grow stagger-2"></div>
 
-    <div class="space-y-10">
-      <div>
-        <h2 class="font-heading text-xl font-semibold">Experience</h2>
+    <div class="mt-12 space-y-14">
+      <!-- Experience -->
+      <div class="animate-slide-up stagger-3">
+        <h2 class="font-heading text-2xl">Experience</h2>
 
-        <div class="mt-6 space-y-8">
-          <div class="relative border-l-2 border-muted pl-6">
-            <div class="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-primary"></div>
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 class="font-heading font-semibold">Staff Engineer</h3>
-              <span class="text-sm text-muted-foreground">Apr 2025 &ndash; Present</span>
+        <div class="mt-8 space-y-10">
+          {[
+            {
+              title: "Staff Engineer",
+              period: "Apr 2025 \u2013 Present",
+              company: "Telness Tech",
+              location: "Stockholm",
+              items: [
+                "Increased integration speed with new network operators by 80%, enabling faster onboarding and market launches",
+                "Designed and shaped new APIs and architected end-to-end product capabilities across the platform",
+                "Evaluated and drove decisions on new systems, tools, and commercial proposals for long-term scalability",
+              ],
+            },
+            {
+              title: "Director of Technology & Innovation",
+              period: "Aug 2024 \u2013 Mar 2025",
+              company: "Nenda",
+              location: "Stockholm",
+              items: [
+                "Defined a strategic technology roadmap resulting in 100%+ YoY growth",
+                "Enabled new revenue streams through Digital Signage, designed modularly for SaaS and advertising models",
+                "Cut Azure cloud costs by 50% through instance right-sizing and logging optimizations",
+                "Reduced project delivery times by 75%, accelerating product-to-market timelines",
+                "Regularly engaged with CEO, investors, and strategic stakeholders on technology direction",
+              ],
+            },
+            {
+              title: "Engineering Manager",
+              period: "Aug 2023 \u2013 Aug 2024",
+              company: "Telness Tech",
+              location: "Stockholm",
+              items: [
+                "Managed and mentored a team of 10 engineers, scaling the tech department to 50+",
+                "Led the external API project, gaining international interest after launch",
+                "Delivered critical features enabling customer launches and 100%+ YoY growth",
+                "Reduced new engineer onboarding time \u2014 deploying their own code within 20 days",
+                "Awarded Role Model of the Year by company-wide vote (2023 & 2024)",
+              ],
+            },
+            {
+              title: "Fullstack Developer",
+              period: "Dec 2021 \u2013 Aug 2023",
+              company: "Telness Tech",
+              location: "Stockholm",
+              description: "Built and maintained cloud-based BSS/OSS platform features using TypeScript, React, Go, and AWS. Contributed to the core telecom infrastructure enabling mobile operators worldwide.",
+            },
+            {
+              title: "Fullstack Developer",
+              period: "Feb 2021 \u2013 Dec 2021",
+              company: "Bencha",
+              location: "Stockholm",
+              items: [
+                "Owned the web application built with Next.js, React, and TypeScript with sub-2-minute CI/CD deployments",
+                "Built AI-driven features including image-based clothing search using machine learning",
+                "Collaborated on product innovation including platform gamification",
+              ],
+            },
+            {
+              title: "Software Engineer Intern",
+              period: "Dec 2020 \u2013 Feb 2021",
+              company: "Viabl Ventures",
+              location: "Remote",
+              description: "Built a client portal using Django and Vue.js with Atomic component architecture for improved modularity.",
+            },
+          ].map((role) => (
+            <div class="relative pl-6 border-l-2 border-border/60">
+              <div class="absolute -left-[5px] top-1.5 h-2 w-2 rounded-full bg-primary" />
+              <div class="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between">
+                <h3 class="font-semibold text-foreground">{role.title}</h3>
+                <span class="text-sm text-muted-foreground font-mono">{role.period}</span>
+              </div>
+              <p class="text-sm text-primary/80">{role.company} &middot; {role.location}</p>
+              {role.description && (
+                <p class="mt-2 text-sm text-muted-foreground leading-relaxed">{role.description}</p>
+              )}
+              {role.items && (
+                <ul class="mt-2 space-y-1 text-sm text-muted-foreground">
+                  {role.items.map((item) => (
+                    <li class="leading-relaxed">{item}</li>
+                  ))}
+                </ul>
+              )}
             </div>
-            <p class="text-sm text-primary">Telness Tech &middot; Stockholm</p>
-            <ul class="mt-2 space-y-1 text-sm text-muted-foreground">
-              <li>Increased integration speed with new network operators by 80%, enabling faster onboarding and market launches</li>
-              <li>Designed and shaped new APIs and architected end-to-end product capabilities across the platform</li>
-              <li>Evaluated and drove decisions on new systems, tools, and commercial proposals for long-term scalability</li>
-            </ul>
-          </div>
-
-          <div class="relative border-l-2 border-muted pl-6">
-            <div class="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-primary"></div>
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 class="font-heading font-semibold">Director of Technology & Innovation</h3>
-              <span class="text-sm text-muted-foreground">Aug 2024 &ndash; Mar 2025</span>
-            </div>
-            <p class="text-sm text-primary">Nenda &middot; Stockholm</p>
-            <ul class="mt-2 space-y-1 text-sm text-muted-foreground">
-              <li>Defined a strategic technology roadmap resulting in 100%+ YoY growth</li>
-              <li>Enabled new revenue streams through Digital Signage, designed modularly for SaaS and advertising models</li>
-              <li>Cut Azure cloud costs by 50% through instance right-sizing and logging optimizations</li>
-              <li>Reduced project delivery times by 75%, accelerating product-to-market timelines</li>
-              <li>Regularly engaged with CEO, investors, and strategic stakeholders on technology direction</li>
-            </ul>
-          </div>
-
-          <div class="relative border-l-2 border-muted pl-6">
-            <div class="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-primary"></div>
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 class="font-heading font-semibold">Engineering Manager</h3>
-              <span class="text-sm text-muted-foreground">Aug 2023 &ndash; Aug 2024</span>
-            </div>
-            <p class="text-sm text-primary">Telness Tech &middot; Stockholm</p>
-            <ul class="mt-2 space-y-1 text-sm text-muted-foreground">
-              <li>Managed and mentored a team of 10 engineers, scaling the tech department to 50+</li>
-              <li>Led the external API project, gaining international interest after launch</li>
-              <li>Delivered critical features enabling customer launches and 100%+ YoY growth</li>
-              <li>Reduced new engineer onboarding time &mdash; deploying their own code within 20 days</li>
-              <li>Awarded <strong class="text-foreground">Role Model of the Year</strong> by company-wide vote (2023 & 2024)</li>
-            </ul>
-          </div>
-
-          <div class="relative border-l-2 border-muted pl-6">
-            <div class="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-primary"></div>
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 class="font-heading font-semibold">Fullstack Developer</h3>
-              <span class="text-sm text-muted-foreground">Dec 2021 &ndash; Aug 2023</span>
-            </div>
-            <p class="text-sm text-primary">Telness Tech &middot; Stockholm</p>
-            <p class="mt-2 text-sm text-muted-foreground">
-              Built and maintained cloud-based BSS/OSS platform features using TypeScript, React, Go, and AWS. Contributed to the core telecom infrastructure enabling mobile operators worldwide.
-            </p>
-          </div>
-
-          <div class="relative border-l-2 border-muted pl-6">
-            <div class="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-primary"></div>
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 class="font-heading font-semibold">Fullstack Developer</h3>
-              <span class="text-sm text-muted-foreground">Feb 2021 &ndash; Dec 2021</span>
-            </div>
-            <p class="text-sm text-primary">Bencha &middot; Stockholm</p>
-            <ul class="mt-2 space-y-1 text-sm text-muted-foreground">
-              <li>Owned the web application built with Next.js, React, and TypeScript with sub-2-minute CI/CD deployments</li>
-              <li>Built AI-driven features including image-based clothing search using machine learning</li>
-              <li>Collaborated on product innovation including platform gamification</li>
-            </ul>
-          </div>
-
-          <div class="relative border-l-2 border-muted pl-6">
-            <div class="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-primary"></div>
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 class="font-heading font-semibold">Software Engineer Intern</h3>
-              <span class="text-sm text-muted-foreground">Dec 2020 &ndash; Feb 2021</span>
-            </div>
-            <p class="text-sm text-primary">Viabl Ventures &middot; Remote</p>
-            <p class="mt-2 text-sm text-muted-foreground">
-              Built a client portal using Django and Vue.js with Atomic component architecture for improved modularity.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
 
-      <Separator className="my-2" />
+      <div class="h-px bg-border/60"></div>
 
-      <div>
-        <h2 class="font-heading text-xl font-semibold">Education</h2>
-        <div class="mt-6 space-y-6">
+      <!-- Education -->
+      <div class="animate-slide-up stagger-4">
+        <h2 class="font-heading text-2xl">Education</h2>
+        <div class="mt-8 space-y-8">
           <div>
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 class="font-heading font-semibold">Stockholm University</h3>
-              <span class="text-sm text-muted-foreground">2015 &ndash; 2018</span>
+            <div class="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between">
+              <h3 class="font-semibold text-foreground">Stockholm University</h3>
+              <span class="text-sm text-muted-foreground font-mono">2015 &ndash; 2018</span>
             </div>
             <p class="text-sm text-muted-foreground">Bachelor's Degree, Business Administration</p>
-            <p class="mt-1 text-sm text-muted-foreground">
+            <p class="mt-1 text-sm text-muted-foreground leading-relaxed">
               Chair of the International Committee, Business Manager for the Silicon Valley Project, active in Föreningen Ekonomerna.
             </p>
           </div>
           <div>
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 class="font-heading font-semibold">Springboard</h3>
-              <span class="text-sm text-muted-foreground">2020 &ndash; 2021</span>
+            <div class="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between">
+              <h3 class="font-semibold text-foreground">Springboard</h3>
+              <span class="text-sm text-muted-foreground font-mono">2020 &ndash; 2021</span>
             </div>
             <p class="text-sm text-muted-foreground">Software Engineering Career Track</p>
-            <p class="mt-1 text-sm text-muted-foreground">
+            <p class="mt-1 text-sm text-muted-foreground leading-relaxed">
               700+ hours of hands-on course material covering front-end, back-end, databases, and data structures &amp; algorithms. Completed 4 portfolio projects with 1:1 industry expert mentorship.
             </p>
           </div>
         </div>
       </div>
 
-      <Separator className="my-2" />
+      <div class="h-px bg-border/60"></div>
 
-      <div>
-        <h2 class="font-heading text-xl font-semibold">Languages</h2>
-        <ul class="mt-4 space-y-1 text-muted-foreground">
-          <li><strong class="text-foreground">English</strong> &mdash; Native / bilingual</li>
-          <li><strong class="text-foreground">Swedish</strong> &mdash; Native / bilingual</li>
-          <li><strong class="text-foreground">Danish</strong> &mdash; Full professional proficiency</li>
-        </ul>
+      <!-- Languages -->
+      <div class="animate-slide-up stagger-5">
+        <h2 class="font-heading text-2xl">Languages</h2>
+        <div class="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-muted-foreground">
+          <span><strong class="text-foreground">English</strong> &mdash; Native</span>
+          <span><strong class="text-foreground">Swedish</strong> &mdash; Native</span>
+          <span><strong class="text-foreground">Danish</strong> &mdash; Professional</span>
+        </div>
       </div>
     </div>
   </section>

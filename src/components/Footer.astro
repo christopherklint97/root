@@ -3,27 +3,40 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer class="border-t">
-  <div class="mx-auto flex max-w-3xl flex-col items-center gap-4 px-6 py-8 text-sm text-muted-foreground sm:flex-row sm:justify-between">
-    <p>&copy; {currentYear} Christopher Klint. All rights reserved.</p>
-    <div class="flex items-center gap-4">
-      <a
-        href="https://linkedin.com/in/christopherklint"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="transition-colors hover:text-foreground"
-        aria-label="LinkedIn"
-      >
-        LinkedIn
-      </a>
-      <a
-        href="https://github.com/christopherklint97"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="transition-colors hover:text-foreground"
-        aria-label="GitHub"
-      >
-        GitHub
-      </a>
+  <div class="mx-auto max-w-3xl px-6 py-10">
+    <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <p class="font-heading text-lg text-foreground">Christopher Klint</p>
+        <p class="mt-1 text-sm text-muted-foreground">Building things in Stockholm.</p>
+      </div>
+      <div class="flex items-center gap-5">
+        <a
+          href="https://github.com/christopherklint97"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+          aria-label="GitHub"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://linkedin.com/in/christopherklint"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+          aria-label="LinkedIn"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="/rss.xml"
+          class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+          aria-label="RSS Feed"
+        >
+          RSS
+        </a>
+      </div>
     </div>
+    <p class="mt-8 text-xs text-muted-foreground/60">&copy; {currentYear} Christopher Klint</p>
   </div>
 </footer>

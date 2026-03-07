@@ -3,19 +3,19 @@ import type { APIContext } from "astro";
 import { getCollection } from "astro:content";
 
 export async function GET(context: APIContext) {
-  const posts = (await getCollection("blog"))
-    .filter((post) => !post.data.draft)
+  const thoughts = (await getCollection("thoughts"))
+    .filter((t) => !t.data.draft)
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
   return rss({
-    title: "Christopher Klint's Blog",
-    description: "Thoughts on software engineering, web development, and more.",
+    title: "Christopher Klint",
+    description: "Short takes on engineering, tech, and things I find interesting.",
     site: context.site!,
-    items: posts.map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.date,
-      description: post.data.description,
-      link: `/blog/${post.id}/`,
+    items: thoughts.map((thought) => ({
+      title: thought.data.title,
+      pubDate: thought.data.date,
+      description: thought.data.description,
+      link: `/thoughts/${thought.id}/`,
     })),
   });
 }
