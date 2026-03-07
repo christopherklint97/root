@@ -40,6 +40,7 @@ export interface GitHubRepo {
   language: string | null;
   stargazers_count: number;
   fork: boolean;
+  archived: boolean;
   topics: string[];
 }
 
@@ -54,7 +55,7 @@ export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
     const pinnedNames = new Set(pinnedRepos.map((p) => p.repo));
 
     return repos
-      .filter((r) => !r.fork && !hiddenRepos.includes(r.name))
+      .filter((r) => !r.fork && !r.archived && !hiddenRepos.includes(r.name))
       .sort((a, b) => {
         const aPinned = pinnedNames.has(a.name) ? 1 : 0;
         const bPinned = pinnedNames.has(b.name) ? 1 : 0;
