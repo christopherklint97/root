@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const thoughts = (await getCollection("thoughts"))
+  .filter((t) => !t.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
+---
+
+<BaseLayout title="Thoughts | Christopher Klint" description="Short takes on engineering, tech, and building things.">
+  <section class="mx-auto max-w-3xl px-6 py-12">
+    <div class="animate-slide-up stagger-1">
+      <h1 class="font-heading text-3xl tracking-tight sm:text-4xl">Thoughts</h1>
+      <p class="mt-3 text-muted-foreground">Short takes on engineering, tech, and things I find interesting.</p>
+    </div>
+
+    <div class="mt-10 animate-slide-up stagger-2">
+      {thoughts.length === 0 && (
+        <p class="text-muted-foreground">Nothing here yet. Check back soon.</p>
+      )}
+      <div class="divide-y divide-border/60">
+        {thoughts.map((thought) => (
+          <a
+            href={`/thoughts/${thought.id}`}
+            class="group flex items-baseline gap-4 py-4 transition-colors"
+          >
+            <time
+              datetime={thought.data.date.toISOString()}
+              class="shrink-0 text-sm tabular-nums text-muted-foreground font-mono"
+            >
+              {formatDate(thought.data.date)}
+            </time>
+            <span class="font-medium text-foreground underline decoration-transparent underline-offset-4 transition-colors group-hover:decoration-primary/40">
+              {thought.data.title}
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
